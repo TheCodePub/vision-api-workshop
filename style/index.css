@@ -10,7 +10,6 @@ body {
   background: #EE554F;
   color: white;
   text-align: center;
-  overflow: hidden;
 }
 
 
@@ -89,37 +88,6 @@ input[type="file"] {
   animation: .3s 1.4s show forwards;
 }
 
-.processing {
-  width: 60%;
-  margin: auto;
-  background: white;
-  height: 4px;
-  margin-top: 20px;
-}
-
-@keyframes loader-animation {
-  0% {
-    transform: translate(-50%, 0) scaleX(0.01) translate(50%, 0);
-  }
-  40% {
-    transform: scaleX(0.5);
-  }
-  100% {
-    transform: translate(50%, 0) scaleX(0.01) translate(-50%, 0);
-  }
-}
-@-webkit-keyframes loader-animation {
-  0% {
-    -webkit-transform: translate(-50%, 0) scaleX(0.01) translate(50%, 0);
-  }
-  40% {
-    -webkit-transform: scaleX(0.5);
-  }
-  100% {
-    -webkit-transform: translate(50%, 0) scaleX(0.01) translate(-50%, 0);
-  }
-}
-
 @keyframes show {
   0% {
     opacity: 0;
@@ -131,28 +99,10 @@ input[type="file"] {
   }
 }
 
-
-.loader {
-  height: 5px;
-  width: 60%;
-  margin: 20px auto;
+#image-preview{
+  width: 150px;
 }
 
-.loader::before {
-  content: ' ';
-  display: block;
-  width: 100%;
-  height: 100%;
-  background: white;
-  transform: scaleX(0);
-  animation: .6s loader-animation infinite;
-  transition: .2s opacity;
-  -webkit-transform: scaleX(0);
-  -webkit-animation: .6s loader-animation infinite;
-  -webkit-transition: .2s opacity;
-  opacity: 0;
-}
-
-.loader.loader--load::before {
-  opacity: 1;
+#result{
+  font-size: 128px;
 }
