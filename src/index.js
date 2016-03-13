@@ -53,6 +53,8 @@ function handleVisionResult(result) {
     emojiVersionOfImage ='😟';
   } else if ($.inArray(data.surpriseLikelihood, likely) != -1) {
     emojiVersionOfImage ='😮';
+  } else {
+    emojiVersionOfImage ='😑';
   }
   $('#result').html(emojiVersionOfImage);
 
