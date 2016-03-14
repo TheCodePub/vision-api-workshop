@@ -7,10 +7,17 @@
   <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
 </head>
 <body>
+  <aside class="drawer js-drawer">
+    <input class="js-drawingoption" type="radio" name="drawing" value="Faces" id="Faces">
+    <label class="drawer-option" for="Faces">Faces</label>
+    <input class="js-drawingoption" type="radio" name="drawing" value="Landscapes" id="Landscapes">
+    <label class="drawer-option" for="Landscapes">Landscapes</label>
+  </aside>
   <section class="main">
+    <button class="drawer-hamburger js-drawer-hamburger">&equiv;</button>
     <h1>
       <span class="firstline">Let's draw some</span>
-      <span class="secondline">faces</span>
+      <span class="secondline js-drawingtitle">Faces</span>
     </h1>
 
     <div class="inputwrapper">
@@ -28,11 +35,12 @@
     <div class="loader"></div>
 
     <div class="result"></div>
-
   </section>
+
   <script src="src/vendor/zepto.min.js"></script>
   <script src="src/vendor/raphael.min.js"></script>
   <script src="src/index.js"></script>
+  <script src="src/ui.js"></script>
   <script>
     var API_KEY = '<YOUR-API-KEY-HERE-PLEASE>';
     var API_TYPE = "FACE_DETECTION";  // Other possible types: https://cloud.google.com/vision/docs/concepts#types_of_vision_api_requests
