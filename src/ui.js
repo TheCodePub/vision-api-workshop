@@ -12,6 +12,15 @@ var setDrawingState = function(state) {
   $('.js-drawinghint').text(state.toLowerCase().slice(0, state.length-1))
 }
 
-$('.js-drawingoption').on('change', function() {
-  setDrawingState(this.getAttribute("value"));
+var drawingoptions = $('.js-drawingoption');
+// Event handler
+drawingoptions.on('change', function() {
+  setDrawingState(this.getAttribute('value'));
 })
+
+// Initialisation
+for (var i = 0; i < drawingoptions.length; i++) {
+  if ($(drawingoptions[i]).prop('checked')) {
+    setDrawingState(drawingoptions[i].getAttribute('value'));
+  }
+}
