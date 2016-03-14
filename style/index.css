@@ -12,8 +12,11 @@ html {
 body {
   font-family: Montserrat;
   color: white;
+  background: black;
   text-align: center;
   overflow: hidden;
+  transition: background .3s;
+  -webkit-transition: background .3s;
 }
 
 body[data-drawing="Faces"] {
