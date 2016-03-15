@@ -25,6 +25,9 @@ body[data-drawing="Faces"] {
 body[data-drawing="Landscapes"] {
   background: #00A191;
 }
+body[data-drawing="Logos"] {
+  background: #9B5C8F;
+}
 
 *, *::after, *::before {
   box-sizing: inherit;

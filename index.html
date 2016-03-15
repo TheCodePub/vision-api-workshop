@@ -4,14 +4,21 @@
   <meta charset="utf-8" />
   <title>VISION</title>
   <link rel="stylesheet" href="style/index.css" />
+  <link rel="stylesheet" href="style/logos.css" />
   <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
 </head>
 <body>
   <aside class="drawer js-drawer">
+
     <input class="js-drawingoption" type="radio" name="drawing" value="Faces" id="Faces" checked data-apiname="FACE_DETECTION">
     <label class="drawer-option" for="Faces">Faces</label>
+
     <input class="js-drawingoption" type="radio" name="drawing" value="Landscapes" id="Landscapes" data-apiname="LANDMARK_DETECTION">
     <label class="drawer-option" for="Landscapes">Landscapes</label>
+
+    <input class="js-drawingoption" type="radio" name="drawing" value="Logos" id="Logos" data-apiname="LOGO_DETECTION">
+    <label class="drawer-option" for="Logos">Logos</label>
+
   </aside>
   <section class="main">
     <button class="drawer-hamburger js-drawer-hamburger">&equiv;</button>

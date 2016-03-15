@@ -1,0 +1,30 @@
+.logo-ikea {
+  display: inline-block;
+  position: relative;
+  padding: 30px 30px 40px 60px;
+  color: darkblue;
+  background: darkblue;
+  font-family: Arial black, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 22px;
+  font-size: 50px;
+  font-weight: bolder;
+}
+
+.logo-ikea::before {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  right: 3px;
+  bottom: 3px;
+  border-radius: 50%;
+  background: yellow;
+  z-index: 5;
+}
+
+.logo-ikea span {
+  position: relative;
+  z-index: 10;
+}
