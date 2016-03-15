@@ -24,3 +24,15 @@ for (var i = 0; i < drawingoptions.length; i++) {
     setDrawingState(drawingoptions[i].getAttribute('value'));
   }
 }
+
+$('button.input').click(function() {
+  $('input[type="file"]').trigger('click');
+})
+
+var startAnalyse = function() {
+  $('.loader').addClass("loader--load");
+}
+
+var stopAnalyse = function() {
+  $('.loader').removeClass("loader--load");
+}

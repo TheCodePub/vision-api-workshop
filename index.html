@@ -47,18 +47,6 @@
     var API_TYPE = "FACE_DETECTION";  // Other possible types: https://cloud.google.com/vision/docs/concepts#types_of_vision_api_requests
     var API_MAX_RESULTS = 10;
 
-    $('button.input').click(function() {
-      $('input[type="file"]').trigger('click');
-    })
-
-    var startAnalyse = function() {
-      $('.loader').addClass("loader--load");
-    }
-
-    var stopAnalyse = function() {
-      $('.loader').removeClass("loader--load");
-    }
-
     function gotFile() {
       var file    = $('input[type=file]').prop('files')[0];
       var reader  = new FileReader();
