@@ -6,8 +6,10 @@ var gotFile = function() {
   var file    = $('input[type=file]').prop('files')[0];
   var reader  = new FileReader();
 
-  reader.addEventListener("load", function () {
-    // Retrieve data from the file input
+  // Retrieve data from the file input
+  reader.addEventListener("load", function (e) {
+    // render image preview.
+    // $('#image-preview').attr('src', e.target.result).toggle();
     var content = reader.result.split(',')[1];
     var data = { "requests":[
         {
