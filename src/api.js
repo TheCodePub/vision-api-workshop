@@ -9,7 +9,7 @@ var gotFile = function() {
   // Retrieve data from the file input
   reader.addEventListener("load", function (e) {
     // render image preview.
-    // $('#image-preview').attr('src', e.target.result).toggle();
+    $('#image-preview').attr('src', e.target.result).toggle();
     var content = reader.result.split(',')[1];
     var data = { "requests":[
         {
