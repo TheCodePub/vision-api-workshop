@@ -21,6 +21,7 @@ var gotFile = function() {
     // If the image is already cached
     if (localStorage.getItem(imageSha1 + API_TYPE)) {
       var result = JSON.parse(localStorage.getItem(imageSha1 + API_TYPE))
+      console.log("VISION API RESULT (cached):", result);
       return handleVisionResult(result)
     }
 
