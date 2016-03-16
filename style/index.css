@@ -278,3 +278,9 @@ input:checked + .drawer-option {
 .emoji {
   font-size: 4em;
 }
+
+
+#image-preview {
+  max-width: auto;
+  max-height: 200px;
+}
