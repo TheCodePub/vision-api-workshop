@@ -7,10 +7,10 @@ var resultDiv = $('.result');
  */
 function handleVisionResult(result) {
 
-  // Example : draw the IKEA logo
-  resultDiv.html(
-    '<div class="logo-ikea">' +
-      '<span>Ikea</span>' +
-    '</div>'
-  )
+  // Clear the results
+  resultDiv.html('');
+
+  if (result.faceAnnotations && result.faceAnnotations[0].joyLikelihood == "VERY_LIKELY") {
+    resultDiv.html('<span class="emoji">😊</span>');
+  }
 }

@@ -241,3 +241,7 @@ input:checked + .drawer-option,
 input:checked + .drawer-option {
   color: white;
 }
+
+.emoji {
+  font-size: 4em;
+}

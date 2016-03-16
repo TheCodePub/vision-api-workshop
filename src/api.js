@@ -27,8 +27,8 @@ var gotFile = function() {
       data: JSON.stringify(data),
       success: function(result) {
         stopAnalyse();
-        console.log("VISION API RESULT : ", result);
-        handleVisionResult(result);
+        console.log("VISION API RESULT : ", result.responses[0]);
+        handleVisionResult(result.responses[0]);
       },
       error: function(err) {
         stopAnalyse();
