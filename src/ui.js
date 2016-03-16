@@ -42,3 +42,7 @@ var startAnalyse = function() {
 var stopAnalyse = function() {
   $('.loader').removeClass("loader--load");
 }
+
+$("#file-input").change(function(){
+  gotFile();
+});
