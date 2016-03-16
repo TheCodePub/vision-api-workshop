@@ -32,6 +32,8 @@ Use face detection and [boundingPoly](https://cloud.google.com/vision/reference/
 
 ![Image of Yaktocat](http://cloudmesh.github.io/introduction_to_cloud_computing/_images/face-detection-people.jpg)
 
+There's a function in index.js that renders squares on the faces. Uncomment it (and the code in api.js that renders the preview image), and call it from handleVisionResult. There's also data that shows the locations of all facial features (eye, nose, etc) which you could also draw squares around.
+
 #### Suggestion #3: Drawing faces (advanced)
 Try to recreate/draw a picture of a face using canvas or other graphics library. The [RaphaëlJS](http://dmitrybaranovskiy.github.io/raphael/) library is included in this repo so you can use that straight away if you want to. This can get as complex as you want!
 
