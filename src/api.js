@@ -16,6 +16,14 @@ var gotFile = function() {
       ]
     };
 
+    var imageSha1 = sha1(content);
+
+    // If the image is already cached
+    if (localStorage.getItem(imageSha1 + API_TYPE)) {
+      var result = JSON.parse(localStorage.getItem(imageSha1 + API_TYPE))
+      return handleVisionResult(result)
+    }
+
     // Show the UI loader
     startAnalyse();
 
@@ -27,8 +35,9 @@ var gotFile = function() {
       data: JSON.stringify(data),
       success: function(result) {
         stopAnalyse();
-        console.log("VISION API RESULT : ", result.responses[0]);
-        handleVisionResult(result.responses[0]);
+        localStorage.setItem(imageSha1 + API_TYPE, JSON.stringify(result.responses[0]))
+        console.log("VISION API RESULT: ", result.responses[0]);
+        handleVisionResult(result.responses[0])
       },
       error: function(err) {
         stopAnalyse();
