@@ -10,6 +10,7 @@ var gotFile = function() {
   reader.addEventListener("load", function (e) {
     // render image preview.
     $('#image-preview').attr('src', e.target.result).toggle();
+
     var content = reader.result.split(',')[1];
     var data = { "requests":[
         {
