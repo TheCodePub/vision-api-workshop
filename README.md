@@ -28,7 +28,7 @@ Here we just check the first face data (`result.faceAnnotations[0]`). Vision API
 
 #### Suggestion #2: Frame all the faces in a picture
 
-Use face detection and [boundingPoly](https://cloud.google.com/vision/reference/rest/v1/images/annotate#FaceAnnotation) and to add squares around peoples faces like this:
+Use face detection and [boundingPoly](https://cloud.google.com/vision/reference/rest/v1/images/annotate#FaceAnnotation) to add squares around peoples faces like this:
 
 ![Image of Yaktocat](http://cloudmesh.github.io/introduction_to_cloud_computing/_images/face-detection-people.jpg)
 
@@ -36,4 +36,4 @@ Use face detection and [boundingPoly](https://cloud.google.com/vision/reference/
 Try to recreate/draw a picture of a face using canvas or other graphics library. The [RaphaëlJS](http://dmitrybaranovskiy.github.io/raphael/) library is included in this repo so you can use that straight away if you want to. This can get as complex as you want!
 
  * You can look at `joyLikelyHood` and include a happy/sad mouth
- * You can look at 
+ * You can look at `headwearLikelihood` to include some headware or not
