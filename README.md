@@ -39,3 +39,10 @@ Try to recreate/draw a picture of a face using canvas or other graphics library.
 
  * You can look at `joyLikelyHood` and include a happy/sad mouth
  * You can look at `headwearLikelihood` to include some headware or not
+
+
+### Links
+
+* Vision API docs: https://cloud.google.com/vision/docs/
+* Face detection response: https://cloud.google.com/vision/docs/concepts#face_detection_responses
+* Raphaël: http://dmitrybaranovskiy.github.io/raphael/
