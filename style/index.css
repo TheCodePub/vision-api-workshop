@@ -9,6 +9,15 @@ html {
   box-sizing: border-box;
 }
 
+*::selection {
+  color: white;
+  background: black;
+}
+*::-moz-selection {
+  color: white;
+  background: rgb(236, 206, 101);
+}
+
 body {
   font-family: Montserrat;
   color: white;
@@ -202,6 +211,10 @@ input[type="file"] {
 .drawer.drawer--open {
   transform: translateX(0);
   -webkit-transform: translateX(0);
+}
+
+.drawer--open ~ .main {
+  padding-left: 190px;
 }
 
 .drawer-hamburger {
