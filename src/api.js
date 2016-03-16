@@ -7,6 +7,7 @@ var gotFile = function() {
   var reader  = new FileReader();
 
   reader.addEventListener("load", function () {
+    // Retrieve data from the file input
     var content = reader.result.split(',')[1];
     var data = { "requests":[
         {
@@ -16,13 +17,15 @@ var gotFile = function() {
       ]
     };
 
+    // Compute the sha1 of the image for the caching systeö
     var imageSha1 = sha1(content);
 
-    // If the image is already cached
+    // Check if the image is already cached
+    // If yes, then call the callback function
     if (localStorage.getItem(imageSha1 + API_TYPE)) {
       var result = JSON.parse(localStorage.getItem(imageSha1 + API_TYPE))
       console.log("VISION API RESULT (cached):", result);
-      return handleVisionResult(result)
+      return handleVisionResult(result);
     }
 
     // Show the UI loader
@@ -35,8 +38,13 @@ var gotFile = function() {
       url: 'https://vision.googleapis.com/v1/images:annotate?key=' + API_KEY ,
       data: JSON.stringify(data),
       success: function(result) {
+
+        // Remove the UI loader
         stopAnalyse();
+        // cache the image
         localStorage.setItem(imageSha1 + API_TYPE, JSON.stringify(result.responses[0]))
+
+        // log the result and call the callback function
         console.log("VISION API RESULT: ", result.responses[0]);
         handleVisionResult(result.responses[0])
       },
