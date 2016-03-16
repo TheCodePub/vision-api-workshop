@@ -5,12 +5,32 @@
   src: url("../fonts/HouseSlant.eot") format("embedded-opentype"), url("../fonts/HouseSlant.woff") format("woff");
 }
 
+html {
+  box-sizing: border-box;
+}
+
 body {
   font-family: Montserrat;
-  background: #EE554F;
   color: white;
+  background: black;
   text-align: center;
   overflow: hidden;
+  transition: background .3s;
+  -webkit-transition: background .3s;
+}
+
+body[data-drawing="Faces"] {
+  background: #EE554F;
+}
+body[data-drawing="Landscapes"] {
+  background: #00A191;
+}
+body[data-drawing="Logos"] {
+  background: #9B5C8F;
+}
+
+*, *::after, *::before {
+  box-sizing: inherit;
 }
 
 
@@ -155,4 +175,73 @@ input[type="file"] {
 
 .loader.loader--load::before {
   opacity: 1;
+}
+
+.drawer {
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  height: 100%;
+  padding: 50px 0;
+  background: rgb(36, 36, 36);
+  color: white;
+  transform: translateX(-100%);
+  -webkit-transform: translateX(-100%);
+  transition: all .1s ease-out;
+  -webkit-transition: all .1s ease-out;
+}
+
+.drawer input {
+  display: none;
+}
+
+.drawer.drawer--open {
+  transform: translateX(0);
+  -webkit-transform: translateX(0);
+}
+
+.drawer-hamburger {
+  position: absolute;
+  z-index: 20;
+  top: 0;
+  left: 0;
+  background: transparent;
+  border: 0;
+  font-size: 40px;
+  color: inherit;
+}
+
+.drawer-hamburger,
+.drawer-hamburger:active,
+.drawer-hamburger:focus {
+  outline: 0;
+}
+
+.drawer-hamburger:hover {
+  background: rgba(255, 255, 255, .2);
+}
+
+.drawer-option {
+  display: block;
+  background: transparent;
+  padding: 15px 50px 15px 20px;
+  width: 100%;
+  border: 0;
+  text-align: left;
+  font-size: 20px;
+  color: #AAA;
+}
+
+input:checked + .drawer-option,
+.drawer-option:hover {
+  background: rgba(0,0,0,.2);
+}
+
+input:checked + .drawer-option {
+  color: white;
+}
+
+.emoji {
+  font-size: 4em;
 }

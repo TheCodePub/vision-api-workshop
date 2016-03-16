@@ -4,13 +4,27 @@
   <meta charset="utf-8" />
   <title>VISION</title>
   <link rel="stylesheet" href="style/index.css" />
+  <link rel="stylesheet" href="style/logos.css" />
   <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
 </head>
 <body>
+  <aside class="drawer js-drawer">
+
+    <input class="js-drawingoption" type="radio" name="drawing" value="Faces" id="Faces" checked data-apiname="FACE_DETECTION">
+    <label class="drawer-option" for="Faces">Faces</label>
+
+    <input class="js-drawingoption" type="radio" name="drawing" value="Landscapes" id="Landscapes" data-apiname="LANDMARK_DETECTION">
+    <label class="drawer-option" for="Landscapes">Landscapes</label>
+
+    <input class="js-drawingoption" type="radio" name="drawing" value="Logos" id="Logos" data-apiname="LOGO_DETECTION">
+    <label class="drawer-option" for="Logos">Logos</label>
+
+  </aside>
   <section class="main">
+    <button class="drawer-hamburger js-drawer-hamburger">&equiv;</button>
     <h1>
       <span class="firstline">Let's draw some</span>
-      <span class="secondline">faces</span>
+      <span class="secondline js-drawingtitle">Faces</span>
     </h1>
 
     <div class="inputwrapper">
@@ -21,69 +35,20 @@
       </button>
       <div class="input-hint">
         <strong>Hint:</strong>
-        your picture should include a face
+        your picture should include a
+        <em class="js-drawinghint">face</em>
       </div>
     </div>
 
     <div class="loader"></div>
-
     <div class="result"></div>
 
   </section>
+
   <script src="src/vendor/zepto.min.js"></script>
   <script src="src/vendor/raphael.min.js"></script>
   <script src="src/index.js"></script>
-  <script>
-    var API_KEY = '<YOUR-API-KEY-HERE-PLEASE>';
-    var API_TYPE = "FACE_DETECTION";  // Other possible types: https://cloud.google.com/vision/docs/concepts#types_of_vision_api_requests
-    var API_MAX_RESULTS = 10;
-
-    $('button.input').click(function() {
-      $('input[type="file"]').trigger('click');
-    })
-
-    var startAnalyse = function() {
-      $('.loader').addClass("loader--load");
-    }
-
-    var stopAnalyse = function() {
-      $('.loader').removeClass("loader--load");
-    }
-
-    function gotFile() {
-      var file    = $('input[type=file]').prop('files')[0];
-      var reader  = new FileReader();
-
-      reader.addEventListener("load", function () {
-        var content = reader.result.split(',')[1];
-        var data = { "requests":[
-            {
-              "image":{ "content": content },
-              "features":[ { "type": API_TYPE, "maxResults": API_MAX_RESULTS } ]
-            }
-          ]}
-        $.ajax({
-          type: "POST",
-          contentType: 'application/json',
-          url: 'https://vision.googleapis.com/v1/images:annotate?key=' + API_KEY ,
-          data: JSON.stringify(data),
-          success: handleVisionResult
-        })
-      }, false);
-
-      if (file) {
-        reader.readAsDataURL(file);
-      }
-    }
-
-    /*
-     *
-     * Start doing things with the Vision API response here!
-     *
-     */
-    function handleVisionResult(result) {
-        console.log('SUCCESS:', result)
-    }
-  </script
+  <script src="src/api.js"></script>
+  <script src="src/ui.js"></script>
 </body>
 </html>

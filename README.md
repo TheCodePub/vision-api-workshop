@@ -1,10 +1,10 @@
 ## Google Vision API workshop
-Welcome to the workshop about image recognition using Google's all new shiny :sparkles:Vision:sparkles:  API! 
+Welcome to the workshop about image recognition using Google's all new shiny :sparkles:Vision:sparkles:  API!
 
 ### Getting started
 
 1. In your terminal do: `git clone https://github.com/TheCodePub/vision-api-workshop.git`
-1. Edit `index.html` and set the `API_KEY` value (we will email the key to you before the workshop)
+1. Set the `API_KEY` value in  `src/api.js` (we will email the key to you before the workshop)
 1. Open `index.html` in your favourite browser and start playing with the code!
 
 
