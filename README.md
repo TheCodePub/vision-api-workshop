@@ -14,8 +14,26 @@ The sample code we provide will give you a kickstart to start sending requests t
 
 ### Workshop suggestions
 
-Now it's time to play with the code! If you don't know what to do, maybe try to build one of these ideas:
+Now it's time to play with the code! If you don't know what to do, maybe try to build one of these ideas
 
-* Try to "translate" a face into an emoji
-* Use face detection and try to re-create/draw the face using a graphics library (e.g [RaphaëlJS](http://dmitrybaranovskiy.github.io/raphael/))
-* Try to detect and frame faces in a picture. You can look at the data in boundingPoly in the result of [faceAnnotations](https://cloud.google.com/vision/reference/rest/v1/images/annotate#FaceAnnotation)
+#### Suggestion #1: Face to emoji
+
+Try to "translate" a face into an emoji. If you look at faceAnnotations you could do something like this to begin with:
+
+    if (result.faceAnnotations && result.faceAnnotations[0].joyLikelihood == "VERY_LIKELY") {
+        resultDiv.html('<span class="emoji">😊</span>');
+    }
+
+Here we just check the first face data (`result.faceAnnotations[0]`). Vision API can actually return data for multiple faces in the picture. Maybe generate emojis for all of the faces in the picture?
+
+#### Suggestion #2: Frame all the faces in a picture
+
+Use face detection and [boundingPoly](https://cloud.google.com/vision/reference/rest/v1/images/annotate#FaceAnnotation) and to add squares around peoples faces like this:
+
+![Image of Yaktocat](http://cloudmesh.github.io/introduction_to_cloud_computing/_images/face-detection-people.jpg)
+
+#### Suggestion #3: Drawing faces (advanced)
+Try to recreate/draw a picture of a face using canvas or other graphics library. The [RaphaëlJS](http://dmitrybaranovskiy.github.io/raphael/) library is included in this repo so you can use that straight away if you want to. This can get as complex as you want!
+
+ * You can look at `joyLikelyHood` and include a happy/sad mouth
+ * You can look at 
